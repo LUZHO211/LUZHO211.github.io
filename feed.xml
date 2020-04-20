@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LuzHo211 Blog</title>
+    <description></description>
+    <link>http://pandaq.xyz/</link>
+    <atom:link href="http://pandaq.xyz/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 20 Apr 2020 13:21:00 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2020 13:21:00 +0000</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>关于我的博客网站</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;这篇文章记录一下自己博客搭建的过程。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;博客基于&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;博客框架来搭建，并采用&lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io&quot;&gt;Hux Blog&lt;/a&gt;作为博客主题。分两步走：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装Jekyll博客的开发环境&lt;/li&gt;
+  &lt;li&gt;配置Hux Blog作为博客主题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;一安装jekyll博客开发环境&quot;&gt;一、安装Jekyll博客开发环境&lt;/h3&gt;
+&lt;p&gt;Jekyll依赖Ruby语言环境，所以要先安装Ruby。我自己电脑（Mac OS）本身自带了Ruby，版本为：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+ruby 2.3.7p456 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2018-03-28 revision 63024&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;universal.x86_64-darwin18]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;根据&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll官网&lt;/a&gt;中介绍的“三大步”安装教程，可以很快搭建一个静态博客网站。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;首先，我们执行下面的指令来安装 Jekyll：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler jekyll
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;很遗憾，我运行该指令到最后，它报了一个错误给我：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;··· ···
+
+Fetching: jekyll-sass-converter-2.0.0.gem &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;100%&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ERROR:  Error installing jekyll:
+	jekyll-sass-converter requires Ruby version &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; 2.4.0.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;嗯… 很明显，我电脑自带的Ruby版本没满足Jekyll要求的版本（&lt;code class=&quot;highlighter-rouge&quot;&gt;Ruby version &amp;gt;= 2.4.0&lt;/code&gt;）。还能怎么办？那就来升级一下Ruby的版本呗：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;咱对Ruby也不在行，所以就搜索一下“如何升级Mac OS中的Ruby版本”。参考了这篇文章：&lt;a href=&quot;https://www.jianshu.com/p/a575aff064e3&quot;&gt;Mac OS升级Ruby&lt;/a&gt; 把Ruby升级到了2.6.3版本。这篇文章中介绍的升级方法，核心就是使用Ruby的第三方版本管理工具&lt;a href=&quot;http://rvm.io/&quot;&gt;RVM&lt;/a&gt;来完成。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;那么就先来安装RVM（官网也有介绍&lt;a href=&quot;http://rvm.io/&quot;&gt;如何安装RVM&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; get.rvm.io | bash &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; stable
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;安装完成之后，执行下面的指令来使RVM立即生效：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.rvm/scripts/rvm
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;来检查一下RVM是否已经成功安装以及生效：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+rvm 1.29.9 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;latest&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; by Michal Papis, Piotr Kuczynski, Wayne E. Seguin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;https://rvm.io]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;好了，RVM安装完毕。我们来升级Ruby的版本，从Ruby官网了解到最新的稳定版本是&lt;code class=&quot;highlighter-rouge&quot;&gt;2.6.3&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.6.3
+... ...
+ruby-2.6.3 - &lt;span class=&quot;c&quot;&gt;#generating default wrappers.......&lt;/span&gt;
+ruby-2.6.3 - &lt;span class=&quot;c&quot;&gt;#adjusting #shebangs for (gem irb erb ri rdoc testrb rake).&lt;/span&gt;
+Install of ruby-2.6.3 - &lt;span class=&quot;c&quot;&gt;#complete&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;看上面的提示，应该是成功安装了&lt;code class=&quot;highlighter-rouge&quot;&gt;2.6.3&lt;/code&gt;版本的Ruby，我们来检验一下：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ruby &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+ruby 2.6.3p62 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2019-04-16 revision 67580&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;x86_64-darwin18]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;没错了，接下来继续安装我们的Jekyll，直接使用下面的指令一键安装：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler jekyll
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个安装过程可能会有点耗时，请耐心等待安装Jekyll完成 …&lt;/p&gt;
+
+&lt;h3 id=&quot;二使用hux-blog作为博客主题&quot;&gt;二、使用Hux Blog作为博客主题&lt;/h3&gt;
+
+&lt;p&gt;经过上一章，我们已经将Jekyll开发环境搭建好了，现在来配置Hux Blog作为博客主题。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;下载Hux Blog主题源码，删除无关的文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone git@github.com:Huxpro/huxblog-boilerplate.git my_blog_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;my_blog_site
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; my_blog_site/_posts/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;因为我们下载的是主题作者的博客源码，所以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;rm -rf my_blog_site/_posts/*&lt;/code&gt;直接删除作者的发布的文章，然后我们就可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录下面创建自己的博客文章，写博客了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;写一个简单的博客文章：&lt;code class=&quot;highlighter-rouge&quot;&gt;vim 2019-08-20-my-blog.markdown&lt;/code&gt; 内容如下：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+layout: post
+title: 关于我的博客网站
+subtitle: 我的博客网站搭建记录
+&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;: 2019-08-20 15:28:34.000000000 +08:00
+author: Luz.Ho211
+tags: 
+ - Blog
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;这篇文章记录一下自己博客搭建的过程。
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;启动Jekyll&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;启动成功之后，访问 &lt;a href=&quot;http://127.0.0.1:4000&quot; target=&quot;_blank&quot;&gt;http://127.0.0.1:4000&lt;/a&gt; 就可以看到搭建好的博客页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/my-blog.png&quot; alt=&quot;my-blog&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jekyll默认监听的host是&lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.0&lt;/code&gt;，只能从本机电脑访问；启动Jekyll的时候使用&lt;code class=&quot;highlighter-rouge&quot;&gt;--host&lt;/code&gt;参数让Jekyll监听的host为&lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt; 0.0.0.0
+Configuration file: /root/my_blog_site/_config.yml
+            Source: /root/my_blog_site
+       Destination: /root/my_blog_site/_site
+ Incremental build: disabled. Enable with &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt;
+      Generating...
+                    &lt;span class=&quot;k&quot;&gt;done in &lt;/span&gt;0.408 seconds.
+ Auto-regeneration: enabled &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/root/my_blog_site'&lt;/span&gt;
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;还可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;--port&lt;/code&gt;参数来修改Jekyll监听的端口：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--host&lt;/span&gt; 0.0.0.0 &lt;span class=&quot;nt&quot;&gt;--port&lt;/span&gt; 8080
+Configuration file: /root/my_blog_site/_config.yml
+            Source: /root/my_blog_site
+       Destination: /root/my_blog_site/_site
+ Incremental build: disabled. Enable with &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt;
+      Generating...
+                    &lt;span class=&quot;k&quot;&gt;done in &lt;/span&gt;0.419 seconds.
+ Auto-regeneration: enabled &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/root/my_blog_site'&lt;/span&gt;
+    Server address: http://0.0.0.0:8080
+  Server running... press ctrl-c to stop.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve -h&lt;/code&gt;来查看Jekyll启动服务时支持的其他启动参数。&lt;/p&gt;
+
+&lt;h3 id=&quot;三将jekyll博客以静态资源方式部署&quot;&gt;三、将Jekyll博客以静态资源方式部署&lt;/h3&gt;
+
+&lt;p&gt;如果博客文章写好了，想将博客文章打包成静态资源结合Web服务器（例如&lt;code class=&quot;highlighter-rouge&quot;&gt;Nginx&lt;/code&gt;）进行部署，可以进入博客代码根目录执行如下指令，将文章打包成静态资源：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; jekyll build
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;成功运行完毕后，会在根目录下生成&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;文件夹，这个文件夹里面就是我们要部署的博客文章静态资源。直接将这个文件夹拷贝到&lt;code class=&quot;highlighter-rouge&quot;&gt;Nginx&lt;/code&gt;的静态资源部署目录下，即可完成部署。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Aug 2019 07:28:34 +0000</pubDate>
+        <link>http://pandaq.xyz/2019/08/20/my-blog/</link>
+        <guid isPermaLink="true">http://pandaq.xyz/2019/08/20/my-blog/</guid>
+        
+        <category>Blog</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
