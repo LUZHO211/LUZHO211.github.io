@@ -7,11 +7,11 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="">
-    <meta name="keywords"  content="LuzHo211, LuzHo211 Blog, 博客, 个人网站, 互联网, Web, JavaScript, Java">
+    <meta name="keywords"  content="PandaQ, PandaQ Blog, 博客, 个人网站, 互联网, Web, JavaScript, Java">
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="关于我的博客网站 - LuzHo211 | LuzHo211 Blog">
+    <meta property="og:title" content="关于我的博客网站 - PandaQ | PandaQ Blog">
     
     <meta property="og:type" content="article">
     <meta property="og:description" content="
@@ -22,17 +22,19 @@
     <meta property="article:published_time" content="2019-08-20T07:28:34Z">
     
     
-    <meta property="article:author" content="Luz.Ho211">
+    <meta property="article:author" content="PandaQ">
     
     
     <meta property="article:tag" content="Blog">
     
+    <meta property="article:tag" content="技术教程">
+    
     
     <meta property="og:image" content="http://pandaq.xyz/assets/images/avatar.jpeg">
     <meta property="og:url" content="http://pandaq.xyz/2019/08/20/my-blog/">
-    <meta property="og:site_name" content="LuzHo211 | LuzHo211 Blog">
+    <meta property="og:site_name" content="PandaQ | PandaQ Blog">
     
-    <title>关于我的博客网站 - LuzHo211 | LuzHo211 Blog</title>
+    <title>关于我的博客网站 - PandaQ | PandaQ Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -83,7 +85,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">LuzHo211 Blog</a>
+            <a class="navbar-brand" href="/">PandaQ Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -106,6 +108,8 @@
                     <li>
                         <a href="/archive/">Archive</a>
                     </li>
+                    
+                    
                     
                     
                     
@@ -205,11 +209,13 @@
                         
                         <a class="tag" href="/archive/?tag=Blog" title="Blog">Blog</a>
                         
+                        <a class="tag" href="/archive/?tag=%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B" title="技术教程">技术教程</a>
+                        
                     </div>
                     <h1>关于我的博客网站</h1>
                     
                     <h2 class="subheading">我的博客网站搭建记录</h2>
-                    <span class="meta">Posted by Luz.Ho211 on 2019-08-20</span>
+                    <span class="meta">Posted by PandaQ on 2019-08-20</span>
                 </div>
             </div>
         </div>
@@ -271,9 +277,7 @@ ruby 2.3.7p456 <span class="o">(</span>2018-03-28 revision 63024<span class="o">
 2
 3
 4
-5
 </pre></td><td class="rouge-code"><pre>··· ···
-
 Fetching: jekyll-sass-converter-2.0.0.gem <span class="o">(</span>100%<span class="o">)</span>
 ERROR:  Error installing jekyll:
 	jekyll-sass-converter requires Ruby version <span class="o">&gt;=</span> 2.4.0.
@@ -282,7 +286,7 @@ ERROR:  Error installing jekyll:
 <p>嗯… 很明显，我电脑自带的Ruby版本没满足Jekyll要求的版本（<code class="highlighter-rouge">Ruby version &gt;= 2.4.0</code>）。还能怎么办？那就来升级一下Ruby的版本呗：</p>
 
 <blockquote>
-  <p>咱对Ruby也不在行，所以就搜索一下“如何升级Mac OS中的Ruby版本”。参考了这篇文章：<a href="https://www.jianshu.com/p/a575aff064e3">Mac OS升级Ruby</a> 把Ruby升级到了2.6.3版本。这篇文章中介绍的升级方法，核心就是使用Ruby的第三方版本管理工具<a href="http://rvm.io/">RVM</a>来完成。</p>
+  <p>参考了这篇文章：「<a href="https://www.jianshu.com/p/a575aff064e3">Mac OS升级Ruby</a>」把Ruby升级到了2.6.3版本。这篇文章中介绍的升级方法，核心就是使用Ruby的第三方版本管理工具<a href="http://rvm.io/">RVM</a>来完成。</p>
 </blockquote>
 
 <p>那么就先来安装RVM（官网也有介绍<a href="http://rvm.io/">如何安装RVM</a>）：</p>
@@ -305,7 +309,7 @@ ERROR:  Error installing jekyll:
 rvm 1.29.9 <span class="o">(</span>latest<span class="o">)</span> by Michal Papis, Piotr Kuczynski, Wayne E. Seguin <span class="o">[</span>https://rvm.io]
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>好了，RVM安装完毕。我们来升级Ruby的版本，从Ruby官网了解到最新的稳定版本是<code class="highlighter-rouge">2.6.3</code>：</p>
+<p>好了，RVM安装完毕。我们来升级Ruby的版本，从Ruby官网了解到当前最新版本是<code class="highlighter-rouge">2.6.3</code>：</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -326,7 +330,7 @@ Install of ruby-2.6.3 - <span class="c">#complete</span>
 ruby 2.6.3p62 <span class="o">(</span>2019-04-16 revision 67580<span class="o">)</span> <span class="o">[</span>x86_64-darwin18]
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>没错了，接下来继续安装我们的Jekyll，直接使用下面的指令一键安装：</p>
+<p>没错了，接下来继续安装我们的Jekyll，直接执行下面的指令进行安装：</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gem <span class="nb">install </span>bundler jekyll
@@ -370,14 +374,18 @@ ruby 2.6.3p62 <span class="o">(</span>2019-04-16 revision 67580<span class="o">)
 10
 11
 12
+13
+14
 </pre></td><td class="rouge-code"><pre><span class="nt">---</span>
 layout: post
 title: 关于我的博客网站
 subtitle: 我的博客网站搭建记录
 <span class="nb">date</span>: 2019-08-20 15:28:34.000000000 +08:00
-author: Luz.Ho211
+header-img: assets/images/tag-bg.jpg
+author: PandaQ
 tags: 
  - Blog
+ - 技术教程
 <span class="nt">---</span>
 
 <span class="o">&gt;</span>这篇文章记录一下自己博客搭建的过程。
@@ -448,18 +456,29 @@ Configuration file: /root/my_blog_site/_config.yml
 
 <h3 id="三将jekyll博客以静态资源方式部署">三、将Jekyll博客以静态资源方式部署</h3>
 
-<p>如果博客文章写好了，想将博客文章打包成静态资源结合Web服务器（例如<code class="highlighter-rouge">Nginx</code>）进行部署，可以进入博客代码根目录执行如下指令，将文章打包成静态资源：</p>
+<p>如果博客文章写好了，想将博客文章打包成静态资源结合Web服务器进行发布，例如使用<code class="highlighter-rouge">Nginx</code>或者<code class="highlighter-rouge">Github Pages</code>进行部署。</p>
+
+<ul>
+  <li>进入博客代码根目录执行下面的指令，将博客打包成静态资源：</li>
+</ul>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">install</span> <span class="o">&amp;&amp;</span> jekyll build
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>成功运行完毕后，会在根目录下生成<code class="highlighter-rouge">_site</code>文件夹，这个文件夹里面就是我们要部署的博客文章静态资源。直接将这个文件夹拷贝到<code class="highlighter-rouge">Nginx</code>的静态资源部署目录下，即可完成部署。</p>
+<p>运行完毕后，会在根目录下生成<code class="highlighter-rouge">_site</code>文件夹，这个文件夹就是我们的博客文章静态资源。直接将这个文件夹下的全部内容拷贝到<code class="highlighter-rouge">Nginx</code>的静态资源部署目录下，即可完成部署。或者你使用的是<code class="highlighter-rouge">Github Pages</code>，参考官网的教程：<a href="https://pages.github.com">Github Pages</a>。</p>
 
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
+                    
+                    <li class="next">
+                        <a href="/2019/08/23/java-installation/" data-toggle="tooltip" data-placement="top" title="Java开发环境搭建">
+                        Next<br>
+                        <span>Java开发环境搭建</span>
+                        </a>
+                    </li>
                     
                 </ul>
                 <hr style="visibility: hidden;">
@@ -493,6 +512,26 @@ Configuration file: /root/my_blog_site/_config.yml
         
         
         
+        
+                <a data-sort="0010" 
+                    href="/archive/?tag=Java"
+                    title="Java"
+                    rel="8">Java</a>
+        
+                <a data-sort="0015" 
+                    href="/archive/?tag=Dubbo"
+                    title="Dubbo"
+                    rel="3">Dubbo</a>
+        
+                <a data-sort="0016" 
+                    href="/archive/?tag=%E5%B7%A5%E5%85%B7%E9%9B%86"
+                    title="工具集"
+                    rel="2">工具集</a>
+        
+                <a data-sort="0016" 
+                    href="/archive/?tag=Linux"
+                    title="Linux"
+                    rel="2">Linux</a>
     </div>
 </section>
 
@@ -572,7 +611,7 @@ Configuration file: /root/my_blog_site/_config.yml
 </ul>
 
                 <p class="copyright text-muted">
-                    Copyright &copy; LuzHo211 Blog 2020
+                    Copyright &copy; PandaQ Blog 2020
                     <br>
                     Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a>. Theme by <a href="https://github.com/Huxpro/huxpro.github.io" target="_blank">Hux Blog</a>
                 </p>
@@ -659,7 +698,7 @@ Configuration file: /root/my_blog_site/_config.yml
 
 
 <!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
+<!--<img src="/img/icon_wechat.png" width="0" height="0" />-->
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

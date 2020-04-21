@@ -7,20 +7,20 @@
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="">
-    <meta name="keywords"  content="LuzHo211, LuzHo211 Blog, 博客, 个人网站, 互联网, Web, JavaScript, Java">
+    <meta name="keywords"  content="PandaQ, PandaQ Blog, 博客, 个人网站, 互联网, Web, JavaScript, Java">
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="LuzHo211 | LuzHo211 Blog">
+    <meta property="og:title" content="PandaQ | PandaQ Blog">
     
     <meta property="og:type" content="website">
     <meta property="og:description" content="I hear and I forget. I see and I remember. I do and I understand.">
     
     <meta property="og:image" content="http://pandaq.xyz/assets/images/avatar.jpeg">
     <meta property="og:url" content="http://pandaq.xyz/">
-    <meta property="og:site_name" content="LuzHo211 | LuzHo211 Blog">
+    <meta property="og:site_name" content="PandaQ | PandaQ Blog">
     
-    <title>LuzHo211 | LuzHo211 Blog</title>
+    <title>PandaQ | PandaQ Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -71,7 +71,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">LuzHo211 Blog</a>
+            <a class="navbar-brand" href="/">PandaQ Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,6 +94,8 @@
                     <li>
                         <a href="/archive/">Archive</a>
                     </li>
+                    
+                    
                     
                     
                     
@@ -178,7 +180,7 @@
         
         <div class="site-heading">
         
-          <h1>LuzHo211 Blog</h1>
+          <h1>PandaQ Blog</h1>
           <span class="subheading">I hear and I forget. I see and I remember. I do and I understand.</span>
         </div>
       </div>
@@ -203,46 +205,339 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2019/08/20/my-blog/">
+    <a href="/2020/03/14/SpringBoot-RedisTemplate-serialize/">
         <h2 class="post-title">
-            关于我的博客网站
+            记一次Spring RedisTemplate序列化乱码问题的排查过程
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                最近在SpringBoot项目中使用Redis + Lua脚本来做一个功能需求，使用的是Spring Data Redis中的RedisTemplate来进行Redis的操作。Lua脚本内容如下：
+
+1
+2
+3
+4
+5
+6
+7
+8
+local key = KEYS[1]
+local limit = ARGV[1]
+if (redis.call('INCR', key) &gt; limit)...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on March 14, 2020
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2020/03/13/IPUtils/">
+        <h2 class="post-title">
+            Java获取HTTP请求中客户端真实IP的工具类
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                有时候需要在服务器端获取HTTP请求客户端的真实IP地址，这里记录一下。
+
+点击下载工具类的Java源代码文件：IPUtils.java
+
+或者完整的工具类代码如下所示：
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on March 13, 2020
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2020/02/25/linux-nohup/">
+        <h2 class="post-title">
+            Linux技巧：让进程在后台运行更可靠的几种方法
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  声明：本篇文章不是原创，转载自：https://www.ibm.com/developerworks/cn/linux/l-cn-nohup 
+原文章已经写得很好了，这里转载过来，然后自己实践并记录一下。感谢原文章的作者。
+
+
+我们经常会碰到这样的问题，用telnet/ssh登录到远程的Linux服务器上，执行一些耗时的任务。但是在任务运行结束之前，本地机器和远程Linux机器的网络中...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on February 25, 2020
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2020/01/13/iterm2-lrzsz/">
+        <h2 class="post-title">
+            Mac OS下iTerm2终端配合rz/sz进行远程文件的下载/上传
         </h2>
         
         <h3 class="post-subtitle">
-            我的博客网站搭建记录
+            iTerm2终端进行远程文件操作
         </h3>
         
         <div class="post-content-preview">
             
                 
-  这篇文章记录一下自己博客搭建的过程。
 
+Mac OS下使用iTerm2终端时，经常会使用SSH方式登录到远程服务器，然后上传/下载文件。一般情况使用scp命令或者XFtp应用来直接上传/下载文件，但是如果远程服务器跟我们电脑之间隔了一层跳板机，scp和XFtp就不太好用了。作为替代方案，我们可以使用sz/rz命令来上传/下载文件。
 
-博客基于Jekyll博客框架来搭建，并采用Hux Blog作为博客主题。分两步走：
+一、安装lrzsz程序包
 
-
-  安装Jekyll博客的开发环境
-  配置Hux Blog作为博客主题
-
-
-一、安装Jekyll博客开发环境
-Jekyll依赖Ruby语言环境，所以要先安装Ruby。我自己电脑（Mac OS）本身自带了Ruby，版本为：
-
-1
-2
-$ ruby -v
-ru...
+sz和rz命令是lrzsz程序包提供的两个命令，所以先安装lrzs...
             
         </div>
     </a>
     <p class="post-meta">
-        Posted by Luz.Ho211 on August 20, 2019
+        Posted by PandaQ on January 13, 2020
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2020/01/10/picture-compress/">
+        <h2 class="post-title">
+            图片压缩工具
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  发现一款在线的图片压缩产品，比较好用，记录一下：picdiet。写文章的时候免不了要放图片，图片太大会影响网页加载速度，用这个工具压缩一下，棒！
+
+
+
+
+
+  还有这个：tinypng
+
+
+
+
+
+  还有这个网站：tiomg。这个网站厉害了，不仅可以压缩图片，还能转换图片格式、制作网页favicon以及拼接图片。不过用了一下，体验好像没上面两款好😳😳😳。
+
+
+
+
+还有很多类似在线图片压...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on January 10, 2020
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/12/27/linux-search-file/">
+        <h2 class="post-title">
+            Linux查找文件的命令
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                日常开发中经常会用到Linux查找某个文件的命令，这里记录一下自己常用的几个。参考鸟哥的Linux学习网站：鳥哥的 Linux 私房菜。
+
+一、find
+
+
+  Linux下最常见、最强大的文件查找命令算是find命令了。find命令直接搜索磁盘目录，虽然遍历磁盘目录效率低，但是却可以找到你想找的任何文件。
+
+
+1
+2
+3
+4
+5
+find [PATH] [option] [action]
+...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on December 27, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/12/15/sso-cas/">
+        <h2 class="post-title">
+            CAS单点登录技术（一）
+        </h2>
+        
+        <h3 class="post-subtitle">
+            了解单点登录的原理
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                一、SSO 和CAS
+
+
+  在企业应用开发中，经常会使用到单点登录技术（Single Sign-on）来处理企业的各个应用之间的共享登录场景。
+
+
+通常，企业内部会有多个应用，每个应用都需要用户登录之后才能允许用户访问其内容。现实中，一般不会为每个应用都实现一套登录逻辑，因为这样做既费时、费力又难以维护。而是通过一个统一登录服务，让每个应用都接入这个统一登录服务，这个登录服务可以在各个应用...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ on December 15, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/12/14/dubbo-spi/">
+        <h2 class="post-title">
+            Dubbo SPI机制
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  关于Java SPI机制，之前写过一篇：Java SPI机制，后来了解到Dubbo也实现了一套SPI机制，而不是直接使用Java的SPI。学习了Dubbo SPI源码之后，写下这篇文章，很多东西直接借鉴原文，但是目的为了巩固所学，加深理解。
+
+
+一、Dubbo SPI的使用
+
+与Java SPI相似，Dubbo也是通过特定的目录去加载SPI扩展类，只不过两者加载扩展类的目录不同：Jav...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on December 14, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/12/14/dubbo-telnet-invoke-fastjson-error/">
+        <h2 class="post-title">
+            Dubbo telnet：invoke缺少fastjson惹的祸
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  在使用 Dubbo 的telnet invoke命令测试 Dubbo 接口时，telnet控制台返回了一个错误：Invalid json argument, cause: com/alibaba/fastjson/JSON。
+
+
+从错误信息看，好像跟 fastjson 有点关系。于是就看了一下 Dubbo 处理 invoke 命令的处理器Handler代码来看看：
+
+1
+2
+3
+4
+5...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on December 14, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/12/10/telnet-command/">
+        <h2 class="post-title">
+            使用telnet命令来进行Dubbo接口测试
+        </h2>
+        
+        <div class="post-content-preview">
+            
+                
+  从 2.0.5 版本开始，Dubbo 开始支持通过 telnet 命令来进行服务治理。
+
+
+使用 telnet 命令来直接连接到 Dubbo 的服务提供者，从而直接在命令行控制台使用 Dubbo 提供的指令来进行服务治理，例如调用 Dubbo 接口、查看服务者状态以及服务者提供的接口等信息。
+
+1
+2
+3
+4
+5
+6
+$ telnet localhost 20880
+Trying ::...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by PandaQ Blog on December 10, 2019
     </p>
 </div>
 <hr>
 
 
 <!-- Pager -->
+
+<ul class="pager">
+    
+    
+    <li class="next">
+        <a href="/page2">更早 &rarr;</a>
+    </li>
+    
+</ul>
 
 
     		</div>
@@ -267,6 +562,26 @@ ru...
         
         
         
+        
+                <a data-sort="0010" 
+                    href="/archive/?tag=Java"
+                    title="Java"
+                    rel="8">Java</a>
+        
+                <a data-sort="0015" 
+                    href="/archive/?tag=Dubbo"
+                    title="Dubbo"
+                    rel="3">Dubbo</a>
+        
+                <a data-sort="0016" 
+                    href="/archive/?tag=%E5%B7%A5%E5%85%B7%E9%9B%86"
+                    title="工具集"
+                    rel="2">工具集</a>
+        
+                <a data-sort="0016" 
+                    href="/archive/?tag=Linux"
+                    title="Linux"
+                    rel="2">Linux</a>
     </div>
 </section>
 
@@ -280,7 +595,7 @@ ru...
     <img src="/assets/images/avatar.jpeg" />
     
     
-    <p>Go<br>世界那么大，我想来看看</p>
+    <p>走<br>世界那么大，我想来看看</p>
     
     <!-- SNS Link -->
     
@@ -331,7 +646,7 @@ ru...
 </ul>
 
                 <p class="copyright text-muted">
-                    Copyright &copy; LuzHo211 Blog 2020
+                    Copyright &copy; PandaQ Blog 2020
                     <br>
                     Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a>. Theme by <a href="https://github.com/Huxpro/huxpro.github.io" target="_blank">Hux Blog</a>
                 </p>
@@ -418,7 +733,7 @@ ru...
 
 
 <!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
+<!--<img src="/img/icon_wechat.png" width="0" height="0" />-->
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
